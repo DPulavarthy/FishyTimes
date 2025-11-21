@@ -23,6 +23,20 @@
         <div id="unity-build-title">Fishing</div>
       </div>
     </div>
+    <script src="https://embed.sdk.discordapp.net/1.0.0/discord-embedded-app-sdk.js"></script>
+    <script>
+    DiscordSDK.ready.then(() => {
+      console.log("Discord Activity is ready!");
+
+      const auth = new DiscordSDK.Authentication();
+      auth.authorize({
+        client_id: "1441278605572313138",
+        response_type: "code",
+      }).then(data => {
+        console.log("User auth:", data);
+      });
+    });
+    </script>
     <script>
 
       var container = document.querySelector("#unity-container");
